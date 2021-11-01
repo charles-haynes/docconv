@@ -1,6 +1,6 @@
-module code.sajari.com/docconv
+module github.com/charles-haynes/docconv
 
-go 1.14
+go 1.16
 
 require (
 	github.com/JalfResi/justext v0.0.0-20170829062021-c0282dea7198
