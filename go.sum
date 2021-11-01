@@ -1,3 +1,5 @@
+github.com/charles-haynes/docconv v1.2.0 h1:4UFgUodoW/hZy8dgghiCSSrcKLJP3Imo6UYFatP0PqI=
+github.com/charles-haynes/docconv v1.2.0/go.mod h1:r8yfCP6OKbZ9Xkd87aBa4nfpk6ud/PoyLwex3n6cXSc=
 github.com/JalfResi/justext v0.0.0-20170829062021-c0282dea7198 h1:8P+AjBhGByCuCX2zTkAf6UY+dj0JczX+t6cSdCSyvfw=
 github.com/JalfResi/justext v0.0.0-20170829062021-c0282dea7198/go.mod h1:0SURuH1rsE8aVWvutuMZghRNrNrYEUzibzJfhEYR8L0=
 github.com/PuerkitoBio/goquery v1.4.1/go.mod h1:T9ezsOHcCrDCgA8aF1Cqr3sSYbO/xgdy8/R/XiIMAhA=

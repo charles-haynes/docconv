@@ -1,13 +1,13 @@
 # docconv
 
-[![Go reference](https://pkg.go.dev/badge/code.sajari.com/docconv.svg)](https://pkg.go.dev/code.sajari.com/docconv)
-[![Build status](https://github.com/sajari/docconv/workflows/Go/badge.svg?branch=master)](https://github.com/sajari/docconv/actions)
-[![Report card](https://goreportcard.com/badge/code.sajari.com/docconv)](https://goreportcard.com/report/code.sajari.com/docconv)
-[![Sourcegraph](https://sourcegraph.com/github.com/sajari/docconv/-/badge.svg)](https://sourcegraph.com/github.com/sajari/docconv)
+[![Go reference](https://pkg.go.dev/badge/github.com/charles-haynes/docconv.svg)](https://pkg.go.dev/github.com/charles-haynes/docconv)
+[![Build status](https://github.com/charles-haynes/docconv/workflows/Go/badge.svg?branch=master)](https://github.com/charles-haynes/docconv/actions)
+[![Report card](https://goreportcard.com/badge/github.com/charles-haynes/docconv)](https://goreportcard.com/report/github.com/charles-haynes/docconv)
+[![Sourcegraph](https://sourcegraph.com/github.com/charles-haynes/docconv/-/badge.svg)](https://sourcegraph.com/github.com/charles-haynes/docconv)
 
 A Go wrapper library to convert PDF, DOC, DOCX, XML, HTML, RTF, ODT, Pages documents and images (see optional dependencies below) to plain text.
 
-> **Note for returning users:** the Go import path for this package changed to `code.sajari.com/docconv`.
+> **Note for returning users:** the Go import path for this package changed to `github.com/charles-haynes/docconv`.
 
 ## Installation
 
@@ -15,7 +15,7 @@ If you haven't setup Go before, you first need to [install Go](https://golang.or
 
 To fetch and build the code:
 
-    $ go get code.sajari.com/docconv/...
+    $ go get github.com/charles-haynes/docconv/...
 
 This will also build the command line tool `docd` into `$GOPATH/bin`. Make sure that `$GOPATH/bin` is in your `PATH` environment variable.
 
@@ -34,7 +34,7 @@ To add image support to the `docconv` library you first need to [install and bui
 
 Now you can add `-tags ocr` to any `go` command when building/fetching/testing `docconv` to include support for processing images:
 
-    $ go get -tags ocr code.sajari.com/docconv/...
+    $ go get -tags ocr github.com/charles-haynes/docconv/...
 
 This may complain on macOS, which you can fix by installing [tesseract](https://tesseract-ocr.github.io) via brew:
 
@@ -106,7 +106,7 @@ import (
 	"fmt"
 	"log"
 
-	"code.sajari.com/docconv"
+	"github.com/charles-haynes/docconv"
 )
 
 func main() {
@@ -127,7 +127,7 @@ import (
 	"fmt"
 	"log"
 
-	"code.sajari.com/docconv/client"
+	"github.com/charles-haynes/docconv/client"
 )
 
 func main() {

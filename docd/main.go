@@ -7,7 +7,7 @@ import (
 	"log"
 	"net/http"
 
-	"code.sajari.com/docconv"
+	"github.com/charles-haynes/docconv"
 )
 
 var (

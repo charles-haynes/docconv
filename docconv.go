@@ -1,4 +1,4 @@
-package docconv // import "code.sajari.com/docconv"
+package docconv // import "github.com/charles-haynes/docconv"
 
 import (
 	"encoding/json"

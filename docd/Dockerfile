@@ -1,6 +1,6 @@
 FROM golang:1.14 AS build
 
-WORKDIR /go/src/github.com/sajari/docconv/docd
+WORKDIR /go/src/github.com/charles-haynes/docconv/docd
 COPY main.go .
 RUN go get -v ./
 RUN go build .

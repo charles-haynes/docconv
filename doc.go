@@ -77,7 +77,7 @@ func ConvertDoc(r io.Reader) (string, map[string]string, error) {
 	go func() {
 
 		// Save output to a file
-		outputFile, err := ioutil.TempFile("/tmp", "sajari-convert-")
+		outputFile, err := ioutil.TempFile("/tmp", "docconv-")
 		if err != nil {
 			log.Println("TempFile Out:", err)
 			close(bc)

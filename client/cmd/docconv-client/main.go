@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"code.sajari.com/docconv/client"
+	"github.com/charles-haynes/docconv/client"
 )
 
 var (
