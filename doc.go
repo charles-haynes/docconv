@@ -28,6 +28,7 @@ func ConvertDoc(r io.Reader) (string, map[string]string, error) {
 		defer func() {
 			if e := recover(); e != nil {
 				log.Printf("panic when reading doc format: %v", e)
+				close(mc)
 			}
 		}()
 
@@ -36,6 +37,8 @@ func ConvertDoc(r io.Reader) (string, map[string]string, error) {
 		doc, err := mscfb.New(f)
 		if err != nil {
 			log.Printf("ConvertDoc: could not read doc: %v", err)
+			close(mc)
+			return
 		}
 
 		props := msoleps.New()
@@ -76,34 +79,34 @@ func ConvertDoc(r io.Reader) (string, map[string]string, error) {
 		// Save output to a file
 		outputFile, err := ioutil.TempFile("/tmp", "sajari-convert-")
 		if err != nil {
-			// TODO: Remove this.
 			log.Println("TempFile Out:", err)
+			close(bc)
 			return
 		}
 		defer os.Remove(outputFile.Name())
 
 		err = exec.Command("wvText", f.Name(), outputFile.Name()).Run()
 		if err != nil {
-			// TODO: Remove this.
-			log.Println("wvText:", err)
+			log.Println("wvText exec:", err)
+			close(bc)
+			return
 		}
 
 		var buf bytes.Buffer
 		_, err = buf.ReadFrom(outputFile)
 		if err != nil {
-			// TODO: Remove this.
-			log.Println("wvText:", err)
+			log.Println("wvText read:", err)
+			close(bc)
+			return
 		}
 
 		bc <- buf.String()
 	}()
 
-	// TODO: Should errors in either of the above Goroutines stop things from progressing?
-	body := <-bc
-	meta := <-mc
+	body, bd := <-bc
+	meta, md := <-mc
 
-	// TODO: Check for errors instead of len(body) == 0?
-	if len(body) == 0 {
+	if bd || md {
 		f.Seek(0, 0)
 		return ConvertDocx(f)
 	}
